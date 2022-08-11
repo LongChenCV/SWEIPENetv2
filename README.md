@@ -21,9 +21,11 @@ paper, we use URPC2017 and URPC2018 datasets from the online object detection co
 1. Train the first detection model:
 ```python ssd512_training.py```
 2. Update the weights using CMA algorithm:
+
 2.1 Train the deep model in the NECMA stage (on URPC2018, train 2 deep models in NECMA stage, then turn to train deep models in NLCMA stage)
 (1) Set the variable stage='NECMA' in ssd512_updateweight.py, then run 
 ```python ssd512_updateweight.py```
+
 2.2 Train the deep model in the NLCMA stage
 Set the variable stage='NLCMA' in ssd512_updateweight.py, then run 
 ```python ssd512_updateweight.py```
@@ -31,6 +33,7 @@ Set the variable stage='NLCMA' in ssd512_updateweight.py, then run
 **Testing stage:**  
 3.1 Compute the detections for each class.
 ```python ssd512_evaluation.py```
+
 3.2 Ouput the average precison (AP) of each class and the mean AP 
 ```evaluationcode/main.m```
 
